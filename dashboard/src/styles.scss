@@ -1,0 +1,43 @@
+// styles.scss
+$primaryColor: #3498db;
+$fontSize: 16px;
+
+// ... (other constants)
+// styles.scss
+.dropdown {
+    position: relative;
+    cursor: pointer;
+  
+    .arrow {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+  
+    &.open {
+      .arrow {
+        border-width: 0 4px 4px 4px;
+        border-color: transparent transparent #3498db transparent; // Use your primary color
+        top: 40%;
+      }
+    }
+  
+    &.down {
+      .arrow {
+        border-width: 4px 4px 0 4px;
+        border-color: #3498db transparent transparent transparent; // Use your primary color
+      }
+    }
+  
+    &.up {
+      .arrow {
+        border-width: 0 4px 4px 4px;
+        border-color: transparent transparent #3498db transparent; // Use your primary color
+        transform: rotate(180deg);
+      }
+    }
+  }
+  
