@@ -1,19 +1,19 @@
+// src/store/reducers.js
+import { createSlice } from '@reduxjs/toolkit';
 
-  // src/store/reducers.js
-  const initialState = {
-    employeeData: [],
-  };
-  
-  const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'SET_EMPLOYEE_DATA':
-        return {
-          ...state,
-          employeeData: action.payload,
-        };
-      default:
-        return state;
-    }
-  };
-  
-  export default rootReducer;
+const initialState = {
+  employeeData: [],
+};
+
+const employeeSlice = createSlice({
+  name: 'employee',
+  initialState,
+  reducers: {
+    setEmployeeData: (state, action) => {
+      state.employeeData = action.payload;
+    },
+  },
+});
+
+export const { setEmployeeData } = employeeSlice.actions;
+export default employeeSlice.reducer;
